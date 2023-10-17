@@ -1,4 +1,5 @@
 # pipeline_colabfold_batch
+- this script only works for MSAs generated on the cluster - 
 python scripts to rename MSA files, divide into jobs, and create submit scripts to run CFB on a cluster. After jobs are finished, script to move all pdb and json files into folder
 
 Before MSA_generation:
@@ -16,4 +17,5 @@ run_batch_pipeline.py takes the following arguments: location of MSA folder (mus
 
 Scripts for after the models are finished:
 - move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloaded/ used to run downstream analysis (ie PPIscreenML).
+
   

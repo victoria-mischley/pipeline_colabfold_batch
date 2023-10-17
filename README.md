@@ -15,5 +15,5 @@ run_batch_pipeline.py takes the following arguments: location of MSA folder (mus
 - example submit command: python pipeline_CFB/run_batch_pipeline.py /expanse/lustre/projects/was136/vmischley/vmischley_04_28/test/MSA_files 12 alphafold2_multimer_v2
 
 Scripts for after the models are finished:
-- move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloads/ used to run downstream analysis (ie PPIscreenML).
+- move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloaded/ used to run downstream analysis (ie PPIscreenML).
   

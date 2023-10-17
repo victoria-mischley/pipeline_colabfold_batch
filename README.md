@@ -1,7 +1,7 @@
 # pipeline_colabfold_batch
 
-#pipeline_CFB:
-- this script only works for MSAs generated on the cluster - 
+# pipeline_CFB:
+- this folder only works for MSAs generated on the cluster - 
 python scripts to rename MSA files, divide into jobs, and create submit scripts to run CFB on a cluster. After jobs are finished, script to move all pdb and json files into folder
 
 Before MSA_generation:
@@ -18,8 +18,16 @@ run_batch_pipeline.py takes the following arguments: location of MSA folder (mus
 - example submit command: python pipeline_CFB/run_batch_pipeline.py /expanse/lustre/projects/was136/vmischley/vmischley_04_28/test/MSA_files 12 alphafold2_multimer_v2
 
 
-#pipeline_CFB:
-Scripts for after the models are finished:
+# pipeline_colabfold_batch_onlineMSAgen:
+- this folder only works for MSAs generated on the online server. When you run it using the online server, the input is a fasta file and output is the AF model. There is not intermediate step. However, you still need to divide your sequences into jobs that will take 48 hours. However, instead of seperating MSAs this script will seperate the large fasta file into smaller fast files with the appropriate number of sequences.  -
+- generate_jobs_onlineMSA.py : this script takes large fasta file and outputs individual fasta files that will take 48 hours. Input is location of fasta file.
+-  gen_CFB_submit_script_onlineMSA.py: this script makes a submit script for each of the fasta files that was generated in the previous step.
+-  run_pipeline_CFB_onlineMSAgen.py: runs both generate_jobs_onlineMSA.py and gen_CFB_submit_script_onlineMSA.py. This will take the fasta file with all of the sequences, divide them into individual fasta files, and then generatae submit scripts. The input for this script is: location_of_fasta_file, number_of_recycles, version_of_af
+    - example submit command: python run_pipeline_CFB_onlineMSAgen.py test_fasta.fasta 12 alphafold2_multimer_v2
+
+
+
+#Scripts for after the models are finished:
 - move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloaded/ used to run downstream analysis (ie PPIscreenML).
 
   

@@ -30,4 +30,5 @@ run_batch_pipeline.py takes the following arguments: location of MSA folder (mus
 #Scripts for after the models are finished:
 - move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloaded/ used to run downstream analysis (ie PPIscreenML).
 
-  
+#helpful notes:
+- options for version of AF: auto,alphafold2,alphafold2_ptm,alphafold2_multimer_v1,alphafold2_multimer_v2,alphafold2_multimer_v3

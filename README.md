@@ -1,4 +1,6 @@
 # pipeline_colabfold_batch
+
+#pipeline_CFB:
 - this script only works for MSAs generated on the cluster - 
 python scripts to rename MSA files, divide into jobs, and create submit scripts to run CFB on a cluster. After jobs are finished, script to move all pdb and json files into folder
 
@@ -15,6 +17,8 @@ Scripts for after MSA generation, but before running Colabfold Batch to generate
 run_batch_pipeline.py takes the following arguments: location of MSA folder (must use full path. ie use pwd and copy that path along with MSA folder name), number of recycles, version of alphafold you wish to use. 
 - example submit command: python pipeline_CFB/run_batch_pipeline.py /expanse/lustre/projects/was136/vmischley/vmischley_04_28/test/MSA_files 12 alphafold2_multimer_v2
 
+
+#pipeline_CFB:
 Scripts for after the models are finished:
 - move_af_files.py: this script moves all of the relevant files from each of the individual job folders to one folder, which can then be downloaded/ used to run downstream analysis (ie PPIscreenML).
 

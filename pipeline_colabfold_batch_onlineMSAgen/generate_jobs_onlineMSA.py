@@ -52,8 +52,12 @@ def group_by_time(times, time_limit=2880):
 
 
 def main(final_fasta_file_name, fasta_file_folder):
-    if not os.path.exists(fasta_file_folder):
-        os.mkdir(fasta_file_folder)
+    fasta_folder_path = Path(fasta_file_folder)
+    parent_directory = fasta_folder_path.parent
+    job_folder = parent_directory / fasta_folder_path
+  
+    if not os.path.exists(job_folder):
+        os.mkdir(job_folder)
     seq_length_dict, sequence_dict = get_sequence_length(final_fasta_file_name)
     times = {}
     for key in seq_length_dict:
@@ -67,8 +71,7 @@ def main(final_fasta_file_name, fasta_file_folder):
     for idx, group in enumerate(group_list, 1):
         name_short = final_fasta_file_name[:-6]
         new_fasta_file_name = f"{name_short}_{idx}.fasta"
-        folder_path = Path(fasta_file_folder)
-        new_file_path = folder_path / new_fasta_file_name
+        new_file_path = job_folder/ new_fasta_file_name
         print(new_file_path)
         newfile = open(new_file_path, "a")
         for name in group:
@@ -81,10 +84,13 @@ def main(final_fasta_file_name, fasta_file_folder):
 
 if __name__ == '__main__':
     args = args()
+    
     name_of_fasta_file = args.name_of_fasta_file
+
     if name_of_fasta_file[-6:] == ".fasta":
         final_fasta_file_name = name_of_fasta_file
     else:
         final_fasta_file_name = f"{name_of_fasta_file}.fasta"
     fasta_file_folder = "fasta_files"
+
     main(final_fasta_file_name, fasta_file_folder)

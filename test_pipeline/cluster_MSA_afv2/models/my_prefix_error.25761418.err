@@ -1,0 +1,3 @@
+/cm/local/apps/slurm/var/spool/job25761418/slurm_script: line 12: ______________________________________________________________________: command not found
+Resetting modules to system default. Reseting $MODULEPATH back to system default. All extra directories will be removed from $MODULEPATH.
+2023-10-19 10:15:54.868299: W external/org_tensorflow/tensorflow/compiler/xla/service/gpu/nvptx_compiler.cc:497] The NVIDIA driver's CUDA version is 12.0 which is older than the ptxas CUDA version (12.1.66). Because the driver is older than the ptxas version, XLA is disabling parallel compilation, which may slow down compilation. You should update your NVIDIA driver or use the NVIDIA-provided CUDA forward compatibility packages.

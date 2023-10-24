@@ -3,6 +3,8 @@ There are two different ways to generate models using colabfold batch on expanse
 1. Use the downloaded MSA databases that are on expanse. Run the models using AFV2.
 2. Use the online MSA server. Run the models using AFV3.
 
+   The test pipeline folder has example outputs for each method/
+
 # pipeline_CFB:
 - this folder only works for MSAs generated on the cluster - 
 python scripts to rename MSA files, divide into jobs, and create submit scripts to run CFB on a cluster. After jobs are finished, script to move all pdb and json files into folder

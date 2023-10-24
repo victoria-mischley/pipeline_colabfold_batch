@@ -1,4 +1,7 @@
 # pipeline_colabfold_batch
+There are two different ways to generate models using colabfold batch on expanse:
+1. Use the downloaded MSA databases that are on expanse. Run the models using AFV2.
+2. Use the online MSA server. Run the models using AFV3.
 
 # pipeline_CFB:
 - this folder only works for MSAs generated on the cluster - 

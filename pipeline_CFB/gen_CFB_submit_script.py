@@ -55,7 +55,7 @@ def main(MSA_folder, number_of_recycles, AF_model_version):
       f.write(f"#SBATCH -e {prefix}_error.%j.err\n") 
       f.write(f"#SBATCH -p {partition_CFB}\n#SBATCH --gpus=1\n#SBATCH --nodes=1\n#SBATCH --ntasks-per-node=1\n")
       f.write(f"#SBATCH -t {time_CFB}\n")
-      f.write(f"#SBATCH --account=was138\n#SBATCH --mem={memory}\n")
+      f.write(f"#SBATCH --account=was136\n#SBATCH --mem={memory}\n")
       f.write("______________________________________________________________________\n")
       f.write("module reset\n\n")
       f.write(f"colabfold_batch {job_folder}/{file_name} {file_name}_models  --model-type {AF_model_version}  --num-recycle {recycles} --amber")

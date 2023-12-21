@@ -13,7 +13,7 @@ Before MSA_generation:
 - CFS_submit_script.slurm: this is an example submit script for generating the MSA files from a .fasta file.
   - you need to change the following within the script: MSA_folder_name (this should be the name of the folder that you want the MSAs to be put in), fasta_file_name.fasta (name of fasta file), and location of mmseqs (--mmseqs)
 
-Scripts for after MSA generation, but before running Colabfold Batch to generate the models:
+Scripts for after MSA generation, but before running Colabfold Batch to generate the models. All of these scripts are combined into one script, run_batch_pipeline.py. So you only need to run run_batch_pipeline.py after generating the MSA and it will do all of the following:
 - rename_MSAs.py: After running colabfold search, the MSAs are automatically renamed starting at 0.a3m, 1.a3m. etc. This script renames the files back to the name that you gave in the fasta file. This script will put the renamed MSAs into a new folder
 - split_msas.py: This script splits all of the MSA files (.a3m files) into groups of MSA files that will in total take ~48 hours to complete. This script will generate a new folder "MSA_jobs" that will contain subdirectories each with the approporiate number MSAs based on sequence length. Each of these folders will correspond to a job to submit to the cluster. 
 - gen_CFB_submit_script.py: this script will generate a submit script for each job.

@@ -58,7 +58,7 @@ def main(MSA_folder, number_of_recycles, AF_model_version):
       f.write(f"#SBATCH --account=was136\n#SBATCH --mem={memory}\n")
       f.write("______________________________________________________________________\n")
       f.write("module reset\n\n")
-      f.write(f"colabfold_batch {job_folder}/{file_name} {file_name}_models  --model-type {AF_model_version}  --num-recycle {recycles} --amber")
+      f.write(f"colabfold_batch {job_folder}/{file_name} {file_name}_models  --model-type {AF_model_version}  --num-recycle {recycles} --amber --use-gpu-relax")
       
 
 
